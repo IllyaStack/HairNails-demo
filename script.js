@@ -2,8 +2,8 @@
    HAIR NAILS – Demo Script
    ========================================================= */
 
-/* ▸ Booking-Link zentral ändern (z. B. echte Treatwell-URL des Salons) */
-const BOOKING_URL = "https://www.treatwell.at/";
+/* ▸ Booking-Link zentral – alle "Termin buchen"-Buttons nutzen diese URL */
+const BOOKING_URL = "https://www.treatwell.at/ort/hair-nails/";
 
 document.documentElement.classList.add("js");
 
@@ -36,7 +36,7 @@ window.matchMedia("(min-width: 901px)").addEventListener("change", (e) => e.matc
 const reveals = document.querySelectorAll(".reveal");
 
 // small stagger for siblings in grids
-document.querySelectorAll(".services, .proof__grid, .timeline, .gallery, .hero__text").forEach((group) => {
+document.querySelectorAll(".services, .proof__grid, .gallery, .hero__text").forEach((group) => {
   group.querySelectorAll(":scope > .reveal").forEach((el, i) => el.style.setProperty("--d", `${i * 0.08}s`));
 });
 
