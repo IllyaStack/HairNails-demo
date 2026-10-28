@@ -3,14 +3,18 @@
    ========================================================= */
 
 /* ▸ Booking-Links zentral konfigurieren:
-   Falls die Inhaberin später separate Treatwell-Connect-Widget-Links
-   für einzelne Kategorien bereitstellt, hier einfach eintragen. */
+   - `all`: Öffnet die allgemeine Treatwell-Salonseite.
+   - Kategorien (`friseur`, `naegel`, `haarentfernung`, `gesicht`, `massage`):
+     Nutzen die verifizierten Treatwell-Deep-Links (`?serviceIds=...&tt=...#menu`),
+     wodurch Treatwell direkt den jeweiligen Kategorie-Tab aktiviert, das Menü
+     auf diese Kategorie filtert und zum Menübereich (`#menu`) springt. */
 const BOOKING_URLS = {
   all: "https://www.treatwell.at/ort/hair-nails/",
-  hair: "https://www.treatwell.at/ort/hair-nails/",
-  nails: "https://www.treatwell.at/ort/hair-nails/",
-  beauty: "https://www.treatwell.at/ort/hair-nails/",
-  lashes: "https://www.treatwell.at/ort/hair-nails/"
+  friseur: "https://www.treatwell.at/ort/hair-nails/?serviceIds=TR2628000&tt=6#menu",
+  naegel: "https://www.treatwell.at/ort/hair-nails/?serviceIds=TR2631559&tt=36#menu",
+  haarentfernung: "https://www.treatwell.at/ort/hair-nails/?serviceIds=TR2628105&tt=43#menu",
+  gesicht: "https://www.treatwell.at/ort/hair-nails/?serviceIds=TR4400115&tt=4#menu",
+  massage: "https://www.treatwell.at/ort/hair-nails/?serviceIds=TR2713247&tt=37#menu"
 };
 
 document.documentElement.classList.add("js");
@@ -21,7 +25,7 @@ document.querySelectorAll("[data-booking]").forEach((a) => {
 });
 
 /* ---------- Ab-Preise aus lokaler JSON-Datei laden ----------
-   Fallback-Werte stehen bereits direkt im HTML (ab 10 €, ab 15 €, ab 7 €, ab 65 €),
+   Fallback-Werte stehen bereits direkt im HTML (ab 15 €, ab 15 €, ab 7 €, ab 13 €, ab 10 €),
    sodass die Anzeige auch ohne Fetch (z. B. via file://) sofort funktioniert. */
 async function loadTreatwellPrices() {
   try {
@@ -36,6 +40,14 @@ async function loadTreatwellPrices() {
       const val = typeof entry === "number" ? entry : entry && entry.fromPrice;
       if (typeof val === "number" && Number.isFinite(val) && val > 0) {
         el.textContent = `ab ${val} €`;
+      }
+    });
+
+    document.querySelectorAll("[data-booking]").forEach((a) => {
+      const key = a.dataset.booking;
+      const entry = key && data.prices[key];
+      if (entry && typeof entry.bookingUrl === "string" && entry.bookingUrl.startsWith("https://www.treatwell.at/")) {
+        a.href = entry.bookingUrl;
       }
     });
   } catch {

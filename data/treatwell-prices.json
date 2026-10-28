@@ -1,24 +1,62 @@
 {
-  "updatedAt": "2026-10-28T17:00:00Z",
-  "source": "https://www.treatwell.at/ort/hair-nails/",
-  "hair": {
-    "price": 10,
-    "currency": "EUR",
-    "label": "ab 10 €"
-  },
-  "nails": {
-    "price": 15,
-    "currency": "EUR",
-    "label": "ab 15 €"
-  },
-  "beauty": {
-    "price": 7,
-    "currency": "EUR",
-    "label": "ab 7 €"
-  },
-  "lashes": {
-    "price": 65,
-    "currency": "EUR",
-    "label": "ab 65 €"
+  "venueId": 382206,
+  "venueUrl": "https://www.treatwell.at/ort/hair-nails/",
+  "currency": "EUR",
+  "updatedAt": "2026-10-28T18:00:00Z",
+  "prices": {
+    "friseur": {
+      "label": "Friseur",
+      "treatmentCategoryGroupId": 6,
+      "fromPrice": 15,
+      "formatted": "ab 15 €",
+      "bookingUrl": "https://www.treatwell.at/ort/hair-nails/?serviceIds=TR2628000&tt=6#menu",
+      "sourceGroups": [
+        "Damen - Haarschnitte",
+        "Herren - Haarschnitte",
+        "Damen - Coloration"
+      ]
+    },
+    "naegel": {
+      "label": "Nägel",
+      "treatmentCategoryGroupId": 36,
+      "fromPrice": 15,
+      "formatted": "ab 15 €",
+      "bookingUrl": "https://www.treatwell.at/ort/hair-nails/?serviceIds=TR2631559&tt=36#menu",
+      "sourceGroups": [
+        "Nägel&Pediküre"
+      ]
+    },
+    "haarentfernung": {
+      "label": "Haarentfernung",
+      "treatmentCategoryGroupId": 43,
+      "fromPrice": 7,
+      "formatted": "ab 7 €",
+      "bookingUrl": "https://www.treatwell.at/ort/hair-nails/?serviceIds=TR2628105&tt=43#menu",
+      "sourceGroups": [
+        "Haarentfernung Und Färben"
+      ]
+    },
+    "gesicht": {
+      "label": "Gesicht",
+      "treatmentCategoryGroupId": 4,
+      "fromPrice": 13,
+      "formatted": "ab 13 €",
+      "bookingUrl": "https://www.treatwell.at/ort/hair-nails/?serviceIds=TR4400115&tt=4#menu",
+      "sourceGroups": [
+        "Haarentfernung Und Färben",
+        "Wimpernverlängerung",
+        "Laminierung&Makeup"
+      ]
+    },
+    "massage": {
+      "label": "Massage",
+      "treatmentCategoryGroupId": 37,
+      "fromPrice": 10,
+      "formatted": "ab 10 €",
+      "bookingUrl": "https://www.treatwell.at/ort/hair-nails/?serviceIds=TR2713247&tt=37#menu",
+      "sourceGroups": [
+        "Damen - Haarschnitte"
+      ]
+    }
   }
 }
