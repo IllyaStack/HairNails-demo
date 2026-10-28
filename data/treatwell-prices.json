@@ -1,0 +1,24 @@
+{
+  "updatedAt": "2026-10-28T17:00:00Z",
+  "source": "https://www.treatwell.at/ort/hair-nails/",
+  "hair": {
+    "price": 10,
+    "currency": "EUR",
+    "label": "ab 10 €"
+  },
+  "nails": {
+    "price": 15,
+    "currency": "EUR",
+    "label": "ab 15 €"
+  },
+  "beauty": {
+    "price": 7,
+    "currency": "EUR",
+    "label": "ab 7 €"
+  },
+  "lashes": {
+    "price": 65,
+    "currency": "EUR",
+    "label": "ab 65 €"
+  }
+}
